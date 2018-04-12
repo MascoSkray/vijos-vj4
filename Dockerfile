@@ -17,3 +17,4 @@ python3 -m vj4.server --debug --listen http://0.0.0.0:8888\n\
 ENV LANG=C.UTF-8 TZ=Asia/Shanghai
 EXPOSE 8888
 CMD /entrypoint.sh
+
