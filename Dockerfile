@@ -6,7 +6,7 @@ RUN apt-get update -y && apt-get install -y git python3-pip python3-dev mongodb 
 # Clone the latest vj4 to local
 RUN cd /home && git clone https://github.com/vijos/vj4.git
 # Install requirements and build for production
-RUN cd /home/vj4 && python3 -m pip install -r requirements.txt && npm install && \
+RUN cd /home/vj4 && pip3 install --upgrade pip && python3 -m pip install -r requirements.txt && npm install && \
 curl "http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz" | gunzip -c > GeoLite2-City.mmdb && \
 npm run build:production && echo "\
 #!/bin/sh\n\
